@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aps2</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+:root{
+    --bg:#09090f;
+    --card:#13131d;
+    --text:#fff;
+    --primary:#00e5ff;
+    --secondary:#9d4edd;
+}
+
+.light{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#222;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    transition:.3s;
+}
+
+.bg{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#9d4edd33,transparent 40%),
+    radial-gradient(circle at bottom right,#00e5ff33,transparent 40%);
+    z-index:-1;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+header p{
+    margin-top:10px;
+    opacity:.8;
+}
+
+#themeBtn{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+    color:white;
+}
+
+.search-container{
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+}
+
+#search{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    background:var(--card);
+    color:var(--text);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    text-decoration:none;
+    color:var(--text);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    padding:25px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 0 25px #00e5ff55,
+    0 0 40px #9d4edd55;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.6;
+}
+    </style>
+    <script>
+        const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", () => {
+
+    const value =
+    search.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        const text =
+        card.textContent.toLowerCase();
+
+        card.style.display =
+        text.includes(value)
+        ? "block"
+        : "none";
+    });
+});
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+});
+    </script>
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <header>
+        <h1>Giovanna Souza</h1>
+        <p>Projetos • Exercícios • Desenvolvimento Web</p>
+
+        <button id="themeBtn">🌙 Tema</button>
+    </header>
+
+    <main>
+
+        <div class="search-container">
+            <input
+                type="text"
+                id="search"
+                placeholder="Pesquisar atividade..."
+            >
+        </div>
+
+        <section class="cards" id="cards">
+
+            <a href="EX01/index.html" class="card">
+                <h2>EX01</h2>
+            </a>
+
+            <a href="EX02/index.html" class="card">
+                <h2>EX02</h2>
+            </a>
+
+            <a href="EX03/index.html" class="card">
+                <h2>EX03</h2>
+            </a>
+
+            <a href="EX04/index.html" class="card">
+                <h2>EX04</h2>
+            </a>
+
+            <a href="Table/index.html" class="card">
+                <h2>Table</h2>
+            </a>
+
+            <a href="JavaScript Aula 1/index.html" class="card">
+                <h2>JavaScript Aula 1</h2>
+            </a>
+            <a href="Proposta/index.html" class="card">
+                <h2>Proposta</h2>
+            </a>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Giovanna Souza
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
