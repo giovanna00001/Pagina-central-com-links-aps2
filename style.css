@@ -1,23 +1,20 @@
-.t{
-    background-color: #d48b00;
-    color: white;
-}
 hr{
-    border-top: #d48b00 dashed;
+    background-color: #764e36;
+    height: 5px;
 }
-
 body{
-    margin-left: 160px;
-    background-color: #fff6d8;
-    background-image: url(..//imagens/cabecalhos_back.png);
-    background-repeat: repeat-y ;
+    background-color: #fcfcfc;
 }
 h1{
-    color:  #906718;
+    color: #764e36;
 }
 h2{
-    color:  #906718;
+    color: #fcfcfc;
+    background-color: #764e36;
 }
-p{
-    margin-left: 10px;
+img{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #764e36;
+    padding: 10px;
 }
